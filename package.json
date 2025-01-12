@@ -1,0 +1,23 @@
+{
+  "name": "com.k.paletteservice",
+  "displayName": "k.PaletteService",
+  "version": "0.0.1",
+  "unity": "6000.0",
+  "author": {
+    "name": "k0fe"
+  },
+  "hideInEditor": false,
+  "description": "A simple tool for applying palettes to textures.",
+  "keywords": [
+    "Renderer",
+    "Graphic",
+    "Palette"
+  ],
+  "dependencies": {
+  	"com.k.services": "https://github.com/xk0fe/k.services"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xk0fe/k.paletteservice"
+  }
+}
