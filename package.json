@@ -14,7 +14,7 @@
     "Palette"
   ],
   "dependencies": {
-  	"com.k.services": "https://github.com/xk0fe/k.services"
+  	"com.k.services": "https://github.com/xk0fe/k.services#main"
   },
   "repository": {
     "type": "git",
