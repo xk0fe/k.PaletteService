@@ -13,7 +13,7 @@
     "Graphic",
     "Palette"
   ],
-  "dependencies": {
+  "git-dependencies": {
   	"com.k.services": "https://github.com/xk0fe/k.services.git"
   },
   "repository": {
