@@ -1,15 +1,14 @@
-﻿using UnityEngine;
+﻿using k.PaletteService.Common;
+using UnityEngine;
 
 namespace k.PaletteService.Appliers
 {
     [RequireComponent(typeof(Renderer))]
     public class RendererMaterialPaletteApplier : BasePaletteApplier<Renderer>
     {
-        public override void Apply()
+        protected override void Apply(PaletteObject paletteObject, Renderer obj)
         {
-            base.Apply();
-            if (!TryGetPaletteObject(out var paletteObject)) return;
-            if (!TryGetObject(out var obj)) return;
+            base.Apply(paletteObject, obj);
             obj.material = paletteObject.Material;
         }
     }

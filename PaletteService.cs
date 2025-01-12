@@ -1,9 +1,10 @@
-﻿using k.PaletteService.Common;
+﻿using System;
+using k.PaletteService.Common;
 using k.PaletteService.Configs;
 using k.PaletteService.Enums;
 using k.Services;
 using UnityEngine;
-using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace k.PaletteService
 {
@@ -14,8 +15,8 @@ namespace k.PaletteService
         [SerializeField] private PaletteConfig[] _availablePalettes;
         [SerializeField] private bool _randomizeOnStart;
         
-        [SerializeField] private UnityEvent _onPaletteUpdate;
-        public UnityEvent OnPaletteUpdate => _onPaletteUpdate;
+        public PaletteConfig CurrentPalette => _currentPalette;
+        public Action<PaletteConfig> OnPaletteUpdate;
 
         public override void Initialize()
         {
@@ -32,6 +33,7 @@ namespace k.PaletteService
             }
             var randomIndex = Random.Range(0, _availablePalettes.Length);
             _currentPalette = _availablePalettes[randomIndex];
+            OnPaletteUpdate?.Invoke(_currentPalette);
         }
 
         public bool TryGetPaletteObject(PaletteItem item, out PaletteObject paletteObject)

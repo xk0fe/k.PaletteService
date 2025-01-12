@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using k.PaletteService.Common;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace k.PaletteService.Appliers
@@ -6,11 +7,9 @@ namespace k.PaletteService.Appliers
     [RequireComponent(typeof(Graphic))]
     public class GraphicColorPaletteApplier : BasePaletteApplier<Graphic>
     {
-        public override void Apply()
+        protected override void Apply(PaletteObject paletteObject, Graphic obj)
         {
-            base.Apply();
-            if (!TryGetPaletteObject(out var paletteObject)) return;
-            if (!TryGetObject(out var obj)) return;
+            base.Apply(paletteObject, obj);
             obj.color = paletteObject.Color;
         }
     }
